@@ -14,18 +14,18 @@
 
 #pragma config (FOSC=INTOSC)  	// Internal Oscillator
 #pragma config (WDTE=OFF)	  	// Watchdog Timer Disabled
-#pragma config (PWRTE=OFF)		// Power up timer disabled
+#pragma config (PWRTE=ON)		// Power up timer enabled
 #pragma config (MCLRE=OFF)		// MCLR pin is digital input
 #pragma config (CP=OFF)			// No Code Protection
 #pragma config (CPD=OFF)		// No data Memory Code Protection
-#pragma config (BOREN=OFF)		// Brown out reset disabled
+#pragma config (BOREN=ON)		// Brown out reset enabled
 #pragma config (CLKOUTEN=OFF)	// CLK OUT function disabled 
 #pragma config (IESO=OFF)
 #pragma config (FCMEN=OFF)
 #pragma config (WRT=OFF)
 #pragma config (PLLEN= ON)
 #pragma config (STVREN=OFF)				
-#pragma config (BORV=1)
+#pragma config (BORV=0)			//Vbor=2.7V
 #pragma config (LVP=OFF )
 
 void _delay_ms(unsigned int ms)

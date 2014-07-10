@@ -38,7 +38,7 @@ typedef unsigned char bool;
 #define BALL_DETECT_DIR               TRISAbits.TRISA4
 #define BALL_DETECT_PIN_TYPE          ANSELAbits.ANSA4
 #define BALL_DETECT_CHANNEL						3
-#define BALL_DETECT_PERCENT_CHANGE		20	// percent
+#define BALL_DETECT_PERCENT_CHANGE		25	// percent
 
 #define HIGH_STEADY_STATE_LEVEL       1200  // steps
 #define LOW_STEADY_STATE_LEVEL        300  // steps
