@@ -43,12 +43,12 @@ typedef unsigned char bool;
 #define BALL_DETECT_DIR             TRISCbits.TRISC2
 #define BALL_DETECT_PIN_TYPE        ANSELCbits.ANSC2
 #define BALL_DETECT_CHANNEL		      6
-#define BALL_DETECT_PERCENT_CHANGE	40	// percent
+#define BALL_DETECT_PERCENT_CHANGE	13	// percent, 95 for targets
 
-#define HIGH_STEADY_STATE_LEVEL		  1000  // steps
-#define LOW_STEADY_STATE_LEVEL		  300  // steps
-#define STEADY_STATE_LEVEL_VARIATION	10  //steps		
-#define HYSTERYSIS_PERCENT		        35 // percent
+#define HIGH_STEADY_STATE_LEVEL		  1200  // steps
+#define LOW_STEADY_STATE_LEVEL		  0  // steps
+#define STEADY_STATE_LEVEL_VARIATION	11  //steps
+#define HYSTERYSIS_PERCENT		        12 // percent, 15 for targets
 
 // Pin 10
 #define DATA_IN_PIN                 PORTAbits.RA2

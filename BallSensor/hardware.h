@@ -43,7 +43,7 @@ typedef unsigned char bool;
 #define HIGH_STEADY_STATE_LEVEL       1200  // steps
 #define LOW_STEADY_STATE_LEVEL        300  // steps
 #define STEADY_STATE_LEVEL_VARIATION	10  //steps
-#define HYSTERYSIS_PERCENT						20// percent
+#define HYSTERYSIS_PERCENT						19// percent
 
 // pin 4
 #define READ_NOTWRITE_PIN             PORTAbits.RA3
