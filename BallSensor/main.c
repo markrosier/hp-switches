@@ -11,13 +11,14 @@
 #include "hardware.h"
 #include "main.h"
 #include "interrupt.h"
+#include "pic12f1822.h"
 
 #pragma config (FOSC=INTOSC)  	// Internal Oscillator
-#pragma config (WDTE=OFF)	  	// Watchdog Timer Disabled
+#pragma config (WDTE=ON)	  	// Watchdog Timer Enabled
 #pragma config (PWRTE=ON)		// Power up timer enabled
 #pragma config (MCLRE=OFF)		// MCLR pin is digital input
-#pragma config (CP=OFF)			// No Code Protection
-#pragma config (CPD=OFF)		// No data Memory Code Protection
+#pragma config (CP=ON)			// Code Protection
+#pragma config (CPD=ON)		// Data Memory Code Protection
 #pragma config (BOREN=ON)		// Brown out reset enabled
 #pragma config (CLKOUTEN=OFF)	// CLK OUT function disabled 
 #pragma config (IESO=OFF)
@@ -42,6 +43,7 @@ void _delay_ms(unsigned int ms)
 
 void init( void )
 {
+  WDTCONbits.WDTPS = WDT_PERIOD;
   OSCCON=0x70;         // Select 8 MHz internal clock
   LED_DIR = OUTPUT_PIN;
   LED = LED_OFF;
@@ -95,9 +97,9 @@ int calibrate( void )
 	// dont start until you get 2 values that are pretty similar
 	// ie within a specified level
 	// and within specified upper and lower limits of the expected value
-
 	while (true)
 	{
+    CLRWDT();
 		inputVal = getValue();
 		if ( (inputVal < HIGH_STEADY_STATE_LEVEL) 
 				&& (inputVal > LOW_STEADY_STATE_LEVEL) )
@@ -121,6 +123,7 @@ int calibrate( void )
 	i = 1;
 	while (i < 10)
 	{
+    CLRWDT();
 		inputVal = getValue();
 		if ( abs( inputVal - averageVal ) < STEADY_STATE_LEVEL_VARIATION )
 		{
@@ -132,11 +135,18 @@ int calibrate( void )
 	}
 		
 	// signal that calibration has been successful
-	for (i = 0; i < 3; i ++)
+  // also signal on the switch line for the IOBoard
+  // 2 pulses, 200ms each
+	for (i = 0; i < 2; i ++)
 	{
+    CLRWDT();
 		LED = LED_ON;
+    SENSOR_SWITCH_OUT_PIN = 0;
 		_delay_ms(200);
+
+    CLRWDT();
 		LED= LED_OFF;
+    SENSOR_SWITCH_OUT_PIN = 1;
 		_delay_ms(200);
 	}
 
@@ -148,9 +158,24 @@ int main(int argc, char** argv)
   int steadyStateValue, lowerBallSensorThresholdValue, upperBallSensorThresholdValue;
   enum {offState, onState} state = offState;
   int value;
+  int i;
 
 	init();
-  _delay_ms(10);
+  CLRWDT();
+
+  // Signal that inits are done
+  // Also signal on on the switch line for the IOBoard
+  // 1 pulse, 200ms
+  LED = LED_ON;
+  SENSOR_SWITCH_OUT_PIN = 0;
+  _delay_ms(200);
+  CLRWDT();
+
+  LED = LED_OFF;
+  SENSOR_SWITCH_OUT_PIN = 1;
+  _delay_ms(200);
+  CLRWDT();
+  
   steadyStateValue = calibrate();
   int changeValue = ((long)steadyStateValue * BALL_DETECT_PERCENT_CHANGE)/100;
 	lowerBallSensorThresholdValue = steadyStateValue - changeValue;
@@ -160,6 +185,7 @@ int main(int argc, char** argv)
 
   while (true)
   {
+    CLRWDT();
     value = getValue();
 		switch (state)
 		{
@@ -168,7 +194,7 @@ int main(int argc, char** argv)
 				{
 				LED = LED_ON;
 				SENSOR_SWITCH_OUT_PIN = 0;
-//        _delay_ms(20);
+        _delay_ms(10);
 				state = onState;
 				}
 			break;

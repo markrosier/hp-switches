@@ -13,7 +13,7 @@ extern "C" {
 #endif
 
 #define false 0
-#define true !false
+#define true 1
 typedef unsigned char bool;
 
 #define OUTPUT_PIN				0
@@ -24,6 +24,10 @@ typedef unsigned char bool;
 
 #define ADC_GO_NOT_DONE	0b00000010
 #define ADC_ENABLE 0b00000001
+
+// Watchdog to 0b01000 = 256ms
+// Watchdog to 0b01001 = 512ms
+#define WDT_PERIOD  0b01001
 
 
 // pin 2

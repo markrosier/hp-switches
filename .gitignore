@@ -1,0 +1,22 @@
+# Object files
+*.o
+*.ko
+*.d
+*.obj
+
+# Libraries
+*.lib
+*.a
+
+# Executables
+*.elf
+*.hex
+
+# MPLABX files
+*.mk
+*.properties
+*.bash
+*.map
+
+# Build directory
+build/
