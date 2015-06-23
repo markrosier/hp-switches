@@ -119,11 +119,11 @@ int calibrate( void )
 		}
     _delay_ms(20);
 	}
-			
+
+  // No CLRWDT in this loop, to prevent a lockout when the switch cannot perform calibration
 	i = 1;
 	while (i < 10)
 	{
-    CLRWDT();
 		inputVal = getValue();
 		if ( abs( inputVal - averageVal ) < STEADY_STATE_LEVEL_VARIATION )
 		{
@@ -173,7 +173,7 @@ int main(int argc, char** argv)
 
   LED = LED_OFF;
   SENSOR_SWITCH_OUT_PIN = 1;
-  _delay_ms(200);
+  _delay_ms(100);
   CLRWDT();
   
   steadyStateValue = calibrate();
