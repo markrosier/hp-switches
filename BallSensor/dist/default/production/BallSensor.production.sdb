@@ -338,23 +338,23 @@ onState 1
 [v _main main `(i  1 e 2 0 ]
 {
 "158
-[v main@steadyStateValue steadyStateValue `i  1 a 2 59 ]
+[v main@steadyStateValue steadyStateValue `i  1 a 2 61 ]
 "160
-[v main@value value `i  1 a 2 57 ]
+[v main@value value `i  1 a 2 59 ]
 "158
-[v main@lowerBallSensorThresholdValue lowerBallSensorThresholdValue `i  1 a 2 55 ]
-"179
-[v main@hysterysis hysterysis `i  1 a 2 52 ]
-"177
-[v main@changeValue changeValue `i  1 a 2 50 ]
+[v main@lowerBallSensorThresholdValue lowerBallSensorThresholdValue `i  1 a 2 57 ]
+"182
+[v main@hysterysis hysterysis `i  1 a 2 54 ]
+"180
+[v main@changeValue changeValue `i  1 a 2 52 ]
 "158
-[v main@upperBallSensorThresholdValue upperBallSensorThresholdValue `i  1 a 2 48 ]
+[v main@upperBallSensorThresholdValue upperBallSensorThresholdValue `i  1 a 2 50 ]
 "159
-[v main@state state `E2412  1 a 1 54 ]
+[v main@state state `E2412  1 a 1 56 ]
 "156
 [v main@argc argc `i  1 p 2 42 ]
 [v main@argv argv `*.1*.1uc  1 p 2 44 ]
-"208
+"211
 } 0
 "7 Z:\Documents\hp-switches\BallSensor\interrupt.c
 [v _initInterrupt initInterrupt `(v  1 e 0 0 ]
