@@ -1,12 +1,11 @@
-_init: CODE, 767 0 27
-_getValue: CODE, 667 0 52
-___aldiv: CODE, 537 0 130
-_abs: CODE, 819 0 14
-_main: CODE, 344 0 193
-_initInterrupt: CODE, 833 0 10
-___lmul: CODE, 719 0 48
-__initialization: CODE, 46 0 1
-__delay_ms: CODE, 794 0 25
+_init: CODE, 763 0 27
+_getValue: CODE, 724 0 39
+___aldiv: CODE, 594 0 130
+_abs: CODE, 815 0 14
+_main: CODE, 53 0 280
+_initInterrupt: CODE, 829 0 10
+__initialization: CODE, 46 0 5
+__delay_ms: CODE, 790 0 25
 _isr: CODE, 4 0 41
-_calibrate: CODE, 49 0 295
-Total: 836
+_calibrate: CODE, 333 0 261
+Total: 832

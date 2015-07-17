@@ -16,8 +16,8 @@
 #pragma config (FOSC=INTOSC)  	// Internal Oscillator
 #pragma config (WDTE=ON)	  	// Watchdog Timer Enabled
 #pragma config (PWRTE=ON)		// Power up timer enabled
-#pragma config (MCLRE=OFF)		// MCLR pin is digital input
-#pragma config (CP=ON)			// Code Protection
+#pragma config (MCLRE=ON)		// MCLR pin is digital input
+#pragma config (CP=OFF)			// Code Protection
 #pragma config (CPD=ON)		// Data Memory Code Protection
 #pragma config (BOREN=ON)		// Brown out reset enabled
 #pragma config (CLKOUTEN=OFF)	// CLK OUT function disabled 
@@ -28,6 +28,8 @@
 #pragma config (STVREN=OFF)				
 #pragma config (BORV=0)			//Vbor=2.7V
 #pragma config (LVP=OFF )
+
+long cumulativeVal = 0;
 
 void _delay_ms(unsigned int ms)
 {
@@ -63,7 +65,7 @@ void init( void )
 
 int getValue ( void )
 {
-	int val = 0;
+	//int val = 0;
 	
 	FVRCONbits.ADFVR = 0b10;  	// 2.048V Reference
 	FVRCONbits.FVREN = 1;		// Enable fixed voltage reference
@@ -74,13 +76,13 @@ int getValue ( void )
 	ADCON0bits.CHS = BALL_DETECT_CHANNEL;	// set analogue channel
 	ADCON0bits.ADON = 1;		// set ADC On
 	ADCON0bits.GO_nDONE = 1;	// start the conversion
-	while (ADCON0bits.GO_nDONE)
-	{
+	while (ADCON0bits.GO_nDONE);
+	/*{
 		val ++;  // just do something so compiler doesnt optimise the loop out
-	}
-	val = ADRES >> 6;  //Move 10 bits to the right
+	}*/
+	return ADRES >> 6;  //Move 10 bits to the right
 
-	return val;
+	//return val;
 }
 
 int calibrate( void )
@@ -88,8 +90,7 @@ int calibrate( void )
 	// read the value 10 times, if the value is within 10mV use it
 	// otherwise discard it and take the average of the ten readings
 	// as the quescent state
-	int i;
-	long cumulativeVal = 0;
+	char i;
 	long averageVal;
 	int inputVal;
 	int lastVal = 0;
@@ -153,12 +154,13 @@ int calibrate( void )
 	return averageVal;
 }
 
-int main(int argc, char** argv)
+void main(void)
 {
   int steadyStateValue, lowerBallSensorThresholdValue, upperBallSensorThresholdValue;
   enum {offState, onState} state = offState;
-  int value;
-  int i;
+  int value, i=0;
+  unsigned char averagePtr=0;
+  int averageTable[16];
 
 	init();
   CLRWDT();
@@ -177,10 +179,13 @@ int main(int argc, char** argv)
   CLRWDT();
   
   steadyStateValue = calibrate();
-  int changeValue = ((long)steadyStateValue * BALL_DETECT_PERCENT_CHANGE)/100;
-	lowerBallSensorThresholdValue = steadyStateValue - changeValue;
-  int hysterysis = ((long)steadyStateValue * HYSTERYSIS_PERCENT)/100;
-  upperBallSensorThresholdValue = lowerBallSensorThresholdValue + hysterysis;
+  for(i=0; i<16; i++){
+    averageTable[i]=steadyStateValue;
+  }
+  //int changeValue = ((long)steadyStateValue * BALL_DETECT_PERCENT_CHANGE)/100;
+	lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
+  //int hysterysis = ((long)steadyStateValue * HYSTERYSIS_PERCENT)/100;
+  upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
   initInterrupt();
 
   while (true)
@@ -190,6 +195,27 @@ int main(int argc, char** argv)
 		switch (state)
 		{
 			case offState:
+                // TODO: save one sample every 1000
+                // Don't do it when a ball is detected
+                if(++i>=5000){
+                    LED = LED_ON;
+                    i=0;
+                    // Keep 16 in memory
+                    averageTable[averagePtr++]=value;
+                    if(averagePtr>=16){
+                        averagePtr=0;
+                    }
+                    cumulativeVal=0;
+                    // Compute steadyState when new sample arrives
+                    for(i=0; i<16; i++){
+                        cumulativeVal+=averageTable[i];
+                    }
+                    steadyStateValue=cumulativeVal>>4;
+                    lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
+                    upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
+                    LED = LED_OFF;
+                }
+                
 				if ( value < lowerBallSensorThresholdValue )
 				{
 				LED = LED_ON;
