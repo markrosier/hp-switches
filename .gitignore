@@ -26,3 +26,13 @@
 
 # Build directory
 build/
+*.obj
+BallSensor/funclist
+*.cmf
+*.hxl
+*.lst
+*.rlf
+*.sdb
+*.sym
+BallSensor/funclist
+*.obj

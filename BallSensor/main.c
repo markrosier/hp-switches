@@ -182,9 +182,7 @@ void main(void)
   for(i=0; i<16; i++){
     averageTable[i]=steadyStateValue;
   }
-  //int changeValue = ((long)steadyStateValue * BALL_DETECT_PERCENT_CHANGE)/100;
 	lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
-  //int hysterysis = ((long)steadyStateValue * HYSTERYSIS_PERCENT)/100;
   upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
   initInterrupt();
 
@@ -195,22 +193,23 @@ void main(void)
 		switch (state)
 		{
 			case offState:
-                // TODO: save one sample every 1000
-                // Don't do it when a ball is detected
+                // Pick one sample every 5000
+                // Only perform live calibration in the Idle (off) state
                 if(++i>=5000){
                     LED = LED_ON;
                     i=0;
-                    // Keep 16 in memory
+                    // Keep 16 samples in memory
                     averageTable[averagePtr++]=value;
                     if(averagePtr>=16){
                         averagePtr=0;
                     }
                     cumulativeVal=0;
                     // Compute steadyState when new sample arrives
+                    // Perform the average over the 16 samples
                     for(i=0; i<16; i++){
                         cumulativeVal+=averageTable[i];
                     }
-                    steadyStateValue=cumulativeVal>>4;
+                    steadyStateValue=cumulativeVal/16;
                     lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
                     upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
                     LED = LED_OFF;
@@ -218,21 +217,40 @@ void main(void)
                 
 				if ( value < lowerBallSensorThresholdValue )
 				{
-				LED = LED_ON;
-				SENSOR_SWITCH_OUT_PIN = 0;
-        _delay_ms(10);
-				state = onState;
+                    // Clear i when a ball is detected
+                    // i is used as a timeout
+                    i=0;
+                    LED = LED_ON;
+                    SENSOR_SWITCH_OUT_PIN = 0;
+                    _delay_ms(10);
+                    state = onState;
 				}
 			break;
 			case onState:
 				if ( value > upperBallSensorThresholdValue)
 				{
-				LED = LED_OFF;
-				SENSOR_SWITCH_OUT_PIN = 1;
-				state = offState;
+                    LED = LED_OFF;
+                    SENSOR_SWITCH_OUT_PIN = 1;
+                    state = offState;
 				}
+                _delay_ms(10);
+                
+                // Ball Detection timeout (prevents switch inter-lock in on state))
+                // If the switch detects for more than 30s, re-do calibration
+                // Theory dictates it should be 10ms * 3000 = 30sec, although 6000 gives about 25s...
+                if(++i>=6000){
+                    i=0;
+                    steadyStateValue = value;
+                    for(i=0; i<16; i++){
+                      averageTable[i]=steadyStateValue;
+                    }
+                      lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
+                    upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
+                }
+                
 			break;
-		}
-  }
+            
+		} //end switch
+  } //end while
 }
 
