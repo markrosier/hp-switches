@@ -11,24 +11,25 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+$C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 end_init CODE 0 2D 2D 1 2
 reset_vec CODE 0 0 0 1 2
 config CONFIG 0 8007 8007 2 2
 $dist/default/production\BallSensor.production.obj
-cinit CODE 0 2E 2E 7 2
+cinit CODE 0 2E 2E 8 2
 intentry CODE 0 4 4 29 2
-text7 CODE 0 252 252 82 2
-text6 CODE 0 316 316 19 2
-text5 CODE 0 32F 32F E 2
-text4 CODE 0 2D4 2D4 27 2
-text3 CODE 0 14D 14D 105 2
-text2 CODE 0 2FB 2FB 1B 2
-text1 CODE 0 33D 33D A 2
-maintext CODE 0 35 35 118 2
-cstackBANK0 BANK0 1 20 20 49 1
+text7 CODE 0 30B 30B 82 2
+text6 CODE 0 3CF 3CF 19 2
+text5 CODE 0 3E8 3E8 E 2
+text4 CODE 0 38D 38D 27 2
+text3 CODE 0 1F2 1F2 119 2
+text2 CODE 0 3B4 3B4 1B 2
+text1 CODE 0 3F6 3F6 A 2
+maintext CODE 0 36 36 1BC 2
+cstackBANK0 BANK0 1 20 20 4F 1
 cstackCOMMON COMMON 1 70 70 A 1
-bssBANK0 BANK0 1 69 69 4 1
+cstackBANK1 BANK1 1 A4 A4 4 1
+bssBANK1 BANK1 1 A0 A0 4 1
 bitbssCOMMON COMMON 1 3D0 7A 1 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -36,20 +37,20 @@ bitbssCOMMON COMMON 1 3D0 7A 1 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-BANK0 0006D-0006F 1
-BANK1 000A0-000BF 1
+BANK0 0006F-0006F 1
+BANK1 000A8-000BF 1
 BIGRAM 02000-0206F 1
 CODE 00001-00003 2
-CODE 00347-007FF 2
+CODE 00400-007FF 2
 COMMON 0007B-0007D 1
 CONST 00001-00003 2
-CONST 00347-007FF 2
+CONST 00400-007FF 2
 EEDATA 0F000-0F0FF 2
 ENTRY 00001-00003 2
-ENTRY 00347-007FF 2
+ENTRY 00400-007FF 2
 IDLOC 08000-08003 2
-RAM 0006D-0006F 1
-RAM 000A0-000BF 1
+RAM 0006F-0006F 1
+RAM 000A8-000BF 1
 SFR0 00000-0001F 1
 SFR1 00080-0009F 1
 SFR10 00500-0056F 1
@@ -82,11 +83,11 @@ SFR6 00300-0036F 1
 SFR7 00380-003EF 1
 SFR8 00400-0046F 1
 SFR9 00480-004EF 1
-STACK 0204D-0206F 1
+STACK 02058-0206F 1
 STRCODE 00001-00003 2
-STRCODE 00347-007FF 2
+STRCODE 00400-007FF 2
 STRING 00001-00003 2
-STRING 00347-007FF 2
+STRING 00400-007FF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -102,188 +103,206 @@ STRING 00347-007FF 2
 %LINETAB
 $dist/default/production\BallSensor.production.obj
 "C:\Program Files (x86)\Microchip\xc8\v1.31\include\pic12f1822.h":4927 4 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":22 4 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":24 8 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":26 A intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":28 D intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":29 16 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":30 18 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":31 19 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":32 1A intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":33 1A intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":34 1C intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":35 24 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":36 26 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":37 27 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":38 27 intentry CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":39 29 intentry CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":599 2E cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":602 2E cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":619 2E cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":623 2F cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":624 30 cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":625 31 cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":626 32 cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":632 33 cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":633 33 cinit CODE
-"C:\Users\Romain\AppData\Local\Temp\s7q4.":634 34 cinit CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":157 35 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":160 35 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":161 37 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":162 39 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":165 3A maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":166 3B maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":171 3C maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":172 3E maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":173 3F maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":174 44 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":176 45 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":177 47 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":178 48 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":179 4D maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":181 4E maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":182 56 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":183 63 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":182 6C maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":186 7B maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":188 82 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":189 88 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":195 89 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":200 8A maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":201 99 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":202 9B maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":204 9E maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":205 AA maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":206 AD maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":208 AE maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":210 B6 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":211 C3 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":210 DD maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":213 EC maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":214 103 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":215 109 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":216 10F maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":219 111 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":221 11E maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":222 120 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":223 121 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":224 126 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":226 129 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":228 12A maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":230 136 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":231 138 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":232 139 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":191 13B maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":193 13B maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":194 13C maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":195 144 maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":191 14C maintext CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":88 14D text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":96 14D text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":117 150 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":121 151 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":101 156 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":103 156 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":104 157 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":106 15F text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":108 176 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":109 17D text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":111 185 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":113 19C text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":115 1B6 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":116 1C0 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":125 1C9 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":126 1CB text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":128 1D0 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":129 1D8 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":131 1F1 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":132 203 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":133 221 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":135 225 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":126 22A text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":141 22B text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":142 230 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":143 230 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":144 231 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":145 233 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":146 234 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":148 239 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":149 23A text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":150 23C text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":151 23D text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":141 242 text3 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":154 24B text3 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":6 252 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":14 252 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":15 253 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":16 256 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":17 261 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":18 263 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":19 263 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":20 265 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":21 270 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":23 274 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":24 27C text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":25 282 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":26 284 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":27 286 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":28 28D text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":26 291 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":31 292 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":32 299 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":33 2A9 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":34 2B1 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":36 2B2 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":37 2B9 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":39 2BD text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":40 2C0 text7 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":41 2CB text7 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":66 2D4 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":70 2D4 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":71 2D9 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":72 2DA text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":73 2DD text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":74 2E1 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":75 2E3 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":76 2E5 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":77 2E9 text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":78 2EA text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":79 2EB text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":83 2ED text4 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":46 2FB text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":48 2FB text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":49 300 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":50 302 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":51 303 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":52 305 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":53 307 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":54 309 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":57 30B text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":58 30D text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":60 30F text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":61 311 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":62 313 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":63 315 text2 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":34 316 text6 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":37 316 text6 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":39 31A text6 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":40 31E text6 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":41 31E text6 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":42 326 text6 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\main.c":43 32A text6 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":4 32F text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":6 32F text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":7 331 text5 CODE
-"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":9 33C text5 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":7 33D text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":9 33D text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":10 33F text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":11 340 text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":12 342 text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":13 343 text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":14 344 text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":16 345 text1 CODE
-"Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c":17 346 text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":22 4 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":24 8 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":26 A intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":28 D intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":29 16 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":30 18 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":31 19 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":32 1A intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":33 1A intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":34 1C intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":35 24 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":36 26 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":37 27 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":38 27 intentry CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":39 29 intentry CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":600 2E cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":603 2E cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":620 2E cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":624 2F cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":625 30 cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":626 31 cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":627 32 cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":628 33 cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":634 34 cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":635 34 cinit CODE
+"C:\Users\Ivanof\AppData\Local\Temp\sejk.":636 35 cinit CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":157 36 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":160 36 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":161 3B maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":162 3F maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":165 40 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":166 42 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":169 43 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":170 44 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":175 45 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":176 47 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":177 48 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":178 4D maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":180 4E maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":181 50 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":182 51 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":183 56 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":185 57 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":186 62 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":187 6F maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":186 78 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":189 87 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":190 92 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":191 98 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":197 99 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":202 9A maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":203 A9 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":204 AB maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":206 AE maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":208 B9 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":209 C0 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":211 C6 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":213 C9 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":214 D5 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":215 D8 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":217 D9 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":220 E2 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":221 EF maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":220 111 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":223 120 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":224 144 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":225 14F maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":226 155 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":229 157 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":231 164 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":233 166 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":234 169 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":235 16D maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":236 16F maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":237 174 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":239 177 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":241 178 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":243 184 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":244 186 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":245 187 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":247 189 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":252 18E maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":253 19E maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":254 1A1 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":255 1AA maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":256 1B7 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":255 1C0 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":258 1CF maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":259 1DA maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":193 1E0 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":195 1E0 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":196 1E1 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":197 1E9 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":193 1F1 maintext CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":88 1F2 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":96 1F2 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":117 1F5 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":121 1F6 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":101 1FB text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":103 1FB text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":104 1FC text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":106 204 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":108 21B text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":109 222 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":111 22A text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":113 241 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":115 25B text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":116 268 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":125 272 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":126 274 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":128 279 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":129 281 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":131 29A text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":132 2B3 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":133 2DA text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":135 2DE text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":126 2E3 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":141 2E4 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":142 2E9 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":143 2E9 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":144 2EA text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":145 2EC text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":146 2ED text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":148 2F2 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":149 2F3 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":150 2F5 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":151 2F6 text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":141 2FB text3 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":154 304 text3 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":6 30B text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":14 30B text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":15 30C text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":16 30F text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":17 31A text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":18 31C text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":19 31C text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":20 31E text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":21 329 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":23 32D text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":24 335 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":25 33B text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":26 33D text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":27 33F text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":28 346 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":26 34A text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":31 34B text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":32 352 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":33 362 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":34 36A text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":36 36B text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":37 372 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":39 376 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":40 379 text7 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\aldiv.c":41 384 text7 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":66 38D text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":70 38D text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":71 392 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":72 393 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":73 396 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":74 39A text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":75 39C text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":76 39E text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":77 3A2 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":78 3A3 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":79 3A4 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":83 3A6 text4 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":46 3B4 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":48 3B4 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":49 3B9 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":50 3BB text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":51 3BC text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":52 3BE text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":53 3C0 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":54 3C2 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":57 3C4 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":58 3C6 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":60 3C8 text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":61 3CA text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":62 3CC text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":63 3CE text2 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":34 3CF text6 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":37 3CF text6 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":39 3D3 text6 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":40 3D7 text6 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":41 3D7 text6 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":42 3DF text6 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c":43 3E3 text6 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":4 3E8 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":6 3E8 text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":7 3EA text5 CODE
+"C:\Program Files (x86)\Microchip\xc8\v1.31\sources\common\abs.c":9 3F5 text5 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":7 3F6 text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":9 3F6 text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":10 3F8 text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":11 3F9 text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":12 3FB text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":13 3FC text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":14 3FD text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":16 3FE text1 CODE
+"C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c":17 3FF text1 CODE
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -301,31 +320,32 @@ _d 3D0 -356 COMMON 1 bitbssCOMMON dist/default/production\BallSensor.production.
 __CFG_PLLEN$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __S0 8009 0 ABS 0 - -
-__S1 7B 0 ABS 0 - -
+__S1 A8 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 __Hintentry 5A 0 CODE 0 intentry -
 __Lintentry 8 0 CODE 0 intentry -
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __pintentry 8 0 CODE 0 intentry dist/default/production\BallSensor.production.obj
-_abs 65E 0 CODE 0 text5 dist/default/production\BallSensor.production.obj
+_abs 7D0 0 CODE 0 text5 dist/default/production\BallSensor.production.obj
 _isr 8 0 CODE 0 intentry dist/default/production\BallSensor.production.obj
 __CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
-__end_of_init 62C 0 CODE 0 text2 dist/default/production\BallSensor.production.obj
-__end_of_getValue 5F6 0 CODE 0 text4 dist/default/production\BallSensor.production.obj
+main@steadyToLower 69 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+__end_of_init 79E 0 CODE 0 text2 dist/default/production\BallSensor.production.obj
+__end_of_getValue 768 0 CODE 0 text4 dist/default/production\BallSensor.production.obj
 abs@a 73 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
 ?_abs 73 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
-_main 6A 0 CODE 0 maintext dist/default/production\BallSensor.production.obj
-___sp 0 0 STACK 2 stack C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+_main 6C 0 CODE 0 maintext dist/default/production\BallSensor.production.obj
+___sp 0 0 STACK 2 stack C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 btemp 7E 0 ABS 0 - dist/default/production\BallSensor.production.obj
 ltemp 7E 0 ABS 0 - dist/default/production\BallSensor.production.obj
 ttemp 7E 0 ABS 0 - dist/default/production\BallSensor.production.obj
 wtemp 7E 0 ABS 0 - dist/default/production\BallSensor.production.obj
-_init 5F6 0 CODE 0 text2 dist/default/production\BallSensor.production.obj
+_init 768 0 CODE 0 text2 dist/default/production\BallSensor.production.obj
 calibrate@i 34 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-start 5A 0 CODE 0 init C:\Users\Romain\AppData\Local\Temp\s7q4.obj
-__end_of___aldiv 5A8 0 CODE 0 text7 dist/default/production\BallSensor.production.obj
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+start 5A 0 CODE 0 init C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
+__end_of___aldiv 71A 0 CODE 0 text7 dist/default/production\BallSensor.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 _ADRES 9B 0 ABS 0 - dist/default/production\BallSensor.production.obj
 ltemp0 7E 0 ABS 0 - dist/default/production\BallSensor.production.obj
 ttemp0 7E 0 ABS 0 - dist/default/production\BallSensor.production.obj
@@ -346,16 +366,17 @@ wtemp5 88 0 ABS 0 - dist/default/production\BallSensor.production.obj
 wtemp6 7F 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __Hconfig 10012 0 CONFIG 0 config -
 __Lconfig 1000E 0 CONFIG 0 config -
-main@i 67 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-_getValue 5A8 0 CODE 0 text4 dist/default/production\BallSensor.production.obj
+main@i A6 0 BANK1 1 cstackBANK1 dist/default/production\BallSensor.production.obj
+_getValue 71A 0 CODE 0 text4 dist/default/production\BallSensor.production.obj
 __Hbigram 0 0 ABS 0 bigram -
 __Lbigram 0 0 ABS 0 bigram -
+__CFG_CP$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
 __size_of_getValue 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __size_of_isr 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 isr@us 72 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
-__end_of_abs 67A 0 CODE 0 text5 dist/default/production\BallSensor.production.obj
+__end_of_abs 7EC 0 CODE 0 text5 dist/default/production\BallSensor.production.obj
 __Hfunctab 0 0 CODE 0 functab -
 __Lfunctab 0 0 CODE 0 functab -
 __Hcommon 0 0 ABS 0 common -
@@ -363,7 +384,7 @@ __Lcommon 0 0 ABS 0 common -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 _LATAbits 10C 0 ABS 0 - dist/default/production\BallSensor.production.obj
-___int_sp 0 0 STACK 2 stack C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+___int_sp 0 0 STACK 2 stack C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 ?___aldiv 20 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __size_of_initInterrupt 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
@@ -372,7 +393,7 @@ __Habs1 0 0 ABS 0 abs1 -
 __Labs1 0 0 ABS 0 abs1 -
 __Hsfr0 0 0 ABS 0 sfr0 -
 __Lsfr0 0 0 ABS 0 sfr0 -
-_cumulativeVal 69 0 BANK0 1 bssBANK0 dist/default/production\BallSensor.production.obj
+_cumulativeVal A0 0 BANK1 1 bssBANK1 dist/default/production\BallSensor.production.obj
 __Hsfr1 0 0 ABS 0 sfr1 -
 __Lsfr1 0 0 ABS 0 sfr1 -
 __Hsfr2 0 0 ABS 0 sfr2 -
@@ -392,26 +413,26 @@ __Lsfr8 0 0 ABS 0 sfr8 -
 __Hsfr9 0 0 ABS 0 sfr9 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __CFG_CPD$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
-main@upperBallSensorThresholdValue 5D 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-main@lowerBallSensorThresholdValue 65 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-_calibrate 29A 0 CODE 0 text3 dist/default/production\BallSensor.production.obj
-main@state 5F 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+main@upperBallSensorThresholdValue 61 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+main@lowerBallSensorThresholdValue 6D 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+_calibrate 3E4 0 CODE 0 text3 dist/default/production\BallSensor.production.obj
+main@state 65 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 ?_getValue 73 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
 __delay_ms@i 76 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
 __Hcode 0 0 ABS 0 code -
 __Lcode 0 0 ABS 0 code -
-main@value 61 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-stackhi 206F 0 ABS 0 - C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+main@value 67 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+stackhi 206F 0 ABS 0 - C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-stacklo 204D 0 ABS 0 - C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+stacklo 2058 0 ABS 0 - C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 __Hinit 5A 0 CODE 0 init -
 __Linit 5A 0 CODE 0 init -
-__end_of_main 29A 0 CODE 0 maintext dist/default/production\BallSensor.production.obj
+__end_of_main 3E4 0 CODE 0 maintext dist/default/production\BallSensor.production.obj
 __Htext 0 0 ABS 0 text -
 __Ltext 0 0 ABS 0 text -
-end_of_initialization 66 0 CODE 0 cinit dist/default/production\BallSensor.production.obj
+end_of_initialization 68 0 CODE 0 cinit dist/default/production\BallSensor.production.obj
 ___aldiv@sign 75 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
 __delay_ms@ms 73 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
 __size_of_abs 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
@@ -465,17 +486,17 @@ _IOCANbits 392 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __size_of__delay_ms 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 _PORTAbits C 0 ABS 0 - dist/default/production\BallSensor.production.obj
 _IOCAPbits 391 0 ABS 0 - dist/default/production\BallSensor.production.obj
-__delay_ms 62C 0 CODE 0 text6 dist/default/production\BallSensor.production.obj
+__delay_ms 79E 0 CODE 0 text6 dist/default/production\BallSensor.production.obj
 __Hstrings 0 0 ABS 0 strings -
 __Lstrings 0 0 ABS 0 strings -
-__end_of_initInterrupt 68E 0 CODE 0 text1 dist/default/production\BallSensor.production.obj
+__end_of_initInterrupt 800 0 CODE 0 text1 dist/default/production\BallSensor.production.obj
 __Hbank0 0 0 ABS 0 bank0 -
 __Lbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Lbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 BANK2 1 bank2 -
 __Lbank2 0 0 BANK2 1 bank2 -
-_initInterrupt 67A 0 CODE 0 text1 dist/default/production\BallSensor.production.obj
+_initInterrupt 7EC 0 CODE 0 text1 dist/default/production\BallSensor.production.obj
 __Hbank3 0 0 BANK3 1 bank3 -
 __Lbank3 0 0 BANK3 1 bank3 -
 ___latbits 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
@@ -493,37 +514,41 @@ __Hbank8 0 0 BANK8 1 bank8 -
 __Lbank8 0 0 BANK8 1 bank8 -
 __Hbank9 0 0 BANK9 1 bank9 -
 __Lbank9 0 0 BANK9 1 bank9 -
-__ptext1 67A 0 CODE 0 text1 dist/default/production\BallSensor.production.obj
-__ptext2 5F6 0 CODE 0 text2 dist/default/production\BallSensor.production.obj
-__ptext3 29A 0 CODE 0 text3 dist/default/production\BallSensor.production.obj
-main@steadyStateValue 63 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-__ptext4 5A8 0 CODE 0 text4 dist/default/production\BallSensor.production.obj
-__ptext5 65E 0 CODE 0 text5 dist/default/production\BallSensor.production.obj
-__ptext6 62C 0 CODE 0 text6 dist/default/production\BallSensor.production.obj
-__ptext7 4A4 0 CODE 0 text7 dist/default/production\BallSensor.production.obj
+__ptext1 7EC 0 CODE 0 text1 dist/default/production\BallSensor.production.obj
+__ptext2 768 0 CODE 0 text2 dist/default/production\BallSensor.production.obj
+__ptext3 3E4 0 CODE 0 text3 dist/default/production\BallSensor.production.obj
+main@steadyStateValue A4 0 BANK1 1 cstackBANK1 dist/default/production\BallSensor.production.obj
+__ptext4 71A 0 CODE 0 text4 dist/default/production\BallSensor.production.obj
+__ptext5 7D0 0 CODE 0 text5 dist/default/production\BallSensor.production.obj
+__ptext6 79E 0 CODE 0 text6 dist/default/production\BallSensor.production.obj
+__ptext7 616 0 CODE 0 text7 dist/default/production\BallSensor.production.obj
+__HcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__LcstackBANK1 0 0 ABS 0 cstackBANK1 -
+__pcstackBANK1 A4 0 BANK1 1 cstackBANK1 dist/default/production\BallSensor.production.obj
 __Hclrtext 0 0 ABS 0 clrtext -
 __Lclrtext 0 0 ABS 0 clrtext -
 calibrate@lastVal 2E 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 __CFG_WDTE$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
-__end_of__initialization 66 0 CODE 0 cinit dist/default/production\BallSensor.production.obj
+main@sample 5D 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+__end_of__initialization 68 0 CODE 0 cinit dist/default/production\BallSensor.production.obj
 ?_calibrate 28 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 calibrate@averageVal 30 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-__end_of__delay_ms 65E 0 CODE 0 text6 dist/default/production\BallSensor.production.obj
+main@lowerToUpper 6B 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+__end_of__delay_ms 7D0 0 CODE 0 text6 dist/default/production\BallSensor.production.obj
 __Hidloc 0 0 IDLOC 0 idloc -
 __Lidloc 0 0 IDLOC 0 idloc -
 __CFG_STVREN$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __Hstack 0 0 STACK 2 stack -
 __Lstack 0 0 STACK 2 stack -
 __end_of_isr 5A 0 CODE 0 intentry dist/default/production\BallSensor.production.obj
-__Hcinit 6A 0 CODE 0 cinit -
+__Hcinit 6C 0 CODE 0 cinit -
 __Lcinit 5C 0 CODE 0 cinit -
-___aldiv 4A4 0 CODE 0 text7 dist/default/production\BallSensor.production.obj
+___aldiv 616 0 CODE 0 text7 dist/default/production\BallSensor.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
+__CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 calibrate@inputVal 35 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
-__HbssBANK0 0 0 ABS 0 bssBANK0 -
-__LbssBANK0 0 0 ABS 0 bssBANK0 -
+main@toggleCount 63 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 __Hbank10 0 0 BANK10 1 bank10 -
-__pbssBANK0 69 0 BANK0 1 bssBANK0 dist/default/production\BallSensor.production.obj
 __Lbank10 0 0 BANK10 1 bank10 -
 __delay_ms@us 77 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
 __Hbank20 0 0 BANK20 1 bank20 -
@@ -544,9 +569,12 @@ __Lbank22 0 0 BANK22 1 bank22 -
 __Hbank13 0 0 BANK13 1 bank13 -
 __Lbank13 0 0 BANK13 1 bank13 -
 main@averageTable 3D 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+__HbssBANK1 0 0 ABS 0 bssBANK1 -
+__LbssBANK1 0 0 ABS 0 bssBANK1 -
 __Hbank23 0 0 BANK23 1 bank23 -
 __Lbank23 0 0 BANK23 1 bank23 -
 __Hbank14 0 0 BANK14 1 bank14 -
+__pbssBANK1 A0 0 BANK1 1 bssBANK1 dist/default/production\BallSensor.production.obj
 __Lbank14 0 0 BANK14 1 bank14 -
 __Hbank24 0 0 BANK24 1 bank24 -
 __Lbank24 0 0 BANK24 1 bank24 -
@@ -554,7 +582,7 @@ __Hbank15 0 0 BANK15 1 bank15 -
 __Lbank15 0 0 BANK15 1 bank15 -
 __Hbank25 0 0 BANK25 1 bank25 -
 __Lbank25 0 0 BANK25 1 bank25 -
-__end_of_calibrate 4A4 0 CODE 0 text3 dist/default/production\BallSensor.production.obj
+__end_of_calibrate 616 0 CODE 0 text3 dist/default/production\BallSensor.production.obj
 __Hbank16 0 0 BANK16 1 bank16 -
 __Lbank16 0 0 BANK16 1 bank16 -
 __Hbank26 0 0 BANK26 1 bank26 -
@@ -582,14 +610,15 @@ __Lend_init 5A 0 CODE 0 end_init -
 ___aldiv@divisor 20 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 __Hreset_vec 2 0 CODE 0 reset_vec -
 __Lreset_vec 0 0 CODE 0 reset_vec -
-main@averagePtr 60 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+main@timeout 5F 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
+main@averagePtr 66 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
 __size_of___aldiv 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
-intlevel0 0 0 CODE 0 functab C:\Users\Romain\AppData\Local\Temp\s7q4.obj
-intlevel1 0 0 CODE 0 functab C:\Users\Romain\AppData\Local\Temp\s7q4.obj
-intlevel2 0 0 CODE 0 functab C:\Users\Romain\AppData\Local\Temp\s7q4.obj
-intlevel3 0 0 CODE 0 functab C:\Users\Romain\AppData\Local\Temp\s7q4.obj
-intlevel4 0 0 CODE 0 functab C:\Users\Romain\AppData\Local\Temp\s7q4.obj
-intlevel5 0 0 CODE 0 functab C:\Users\Romain\AppData\Local\Temp\s7q4.obj
+intlevel0 0 0 CODE 0 functab C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
+intlevel1 0 0 CODE 0 functab C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
+intlevel2 0 0 CODE 0 functab C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
+intlevel3 0 0 CODE 0 functab C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
+intlevel4 0 0 CODE 0 functab C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
+intlevel5 0 0 CODE 0 functab C:\Users\Ivanof\AppData\Local\Temp\sejk.obj
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.production.obj
@@ -598,15 +627,13 @@ ___aldiv@quotient 76 0 COMMON 1 cstackCOMMON dist/default/production\BallSensor.
 __Hmaintext 0 0 ABS 0 maintext -
 __Lmaintext 0 0 ABS 0 maintext -
 __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
-__pmaintext 6A 0 CODE 0 maintext dist/default/production\BallSensor.production.obj
+__pmaintext 6C 0 CODE 0 maintext dist/default/production\BallSensor.production.obj
 __CFG_BORV$HI 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
-__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __CFG_FOSC$INTOSC 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __size_of_calibrate 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __initialization 5C 0 CODE 0 cinit dist/default/production\BallSensor.production.obj
 __HbitbssCOMMON 0 0 ABS 0 bitbssCOMMON -
 __LbitbssCOMMON 0 0 ABS 0 bitbssCOMMON -
-__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 __pbitbssCOMMON 3D0 -356 COMMON 1 bitbssCOMMON dist/default/production\BallSensor.production.obj
 __CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\BallSensor.production.obj
 ___aldiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.production.obj
@@ -636,7 +663,8 @@ ___aldiv@dividend 24 0 BANK0 1 cstackBANK0 dist/default/production\BallSensor.pr
 # All other numeric quantities are in decimal.
 %SEGMENTS
 reset_vec 0 0 0 1 2
-intentry 0 4 8 343 2
+intentry 0 4 8 3FC 2
 config 0 8007 1000E 2 2
 cstackCOMMON 1 70 70 B 1
-cstackBANK0 1 20 20 4D 1
+bssBANK1 1 A0 A0 8 1
+cstackBANK0 1 20 20 4F 1

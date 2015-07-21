@@ -3,8 +3,8 @@
 [d edition pro ]
 [d chip 12F1822 ]
 [d frameptr 6 ]
-"160 Z:\Documents\GitHub\hp-switches\BallSensor\main.c
-[e E2410 . `uc
+"162 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c
+[e E2412 . `uc
 offState 0
 onState 1
 ]
@@ -110,11 +110,11 @@ onState 1
 [v ___fltoee __fltoee `(d  1 e 3 0 ]
 "49 C:\Program Files (x86)\Microchip\xc8\v1.31\sources\pic\ftdiv.c
 [v ___ftdiv __ftdiv `(f  1 e 3 0 ]
-"7 Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c
+"7 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c
 [v _initInterrupt initInterrupt `(v  1 e 0 0 ]
 "22
 [v _isr isr `II(v  1 s 0 isr ]
-"34 Z:\Documents\GitHub\hp-switches\BallSensor\main.c
+"34 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c
 [v __delay_ms _delay_ms `(v  1 e 0 0 ]
 "46
 [v _init init `(v  1 e 0 0 ]
@@ -332,36 +332,45 @@ onState 1
 [v _WR WR `VEb  1 e 0 @3241 ]
 "5702
 [v _WREN WREN `VEb  1 e 0 @3242 ]
-"19 Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c
+"19 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c
 [v _d d `b  1 e 0 0 ]
-"32 Z:\Documents\GitHub\hp-switches\BallSensor\main.c
+"32 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c
 [v _cumulativeVal cumulativeVal `l  1 e 4 0 ]
 "157
 [v _main main `(v  1 e 0 0 ]
 {
-"163
+"167
 [v main@averageTable averageTable `[16]i  1 a 32 29 ]
-"161
-[v main@i i `i  1 a 2 71 ]
+"163
+[v main@i i `i  1 a 2 2 ]
 "159
-[v main@lowerBallSensorThresholdValue lowerBallSensorThresholdValue `i  1 a 2 69 ]
-[v main@steadyStateValue steadyStateValue `i  1 a 2 67 ]
+[v main@steadyStateValue steadyStateValue `i  1 a 2 0 ]
+[v main@lowerBallSensorThresholdValue lowerBallSensorThresholdValue `i  1 a 2 77 ]
 "161
-[v main@value value `i  1 a 2 65 ]
-"159
-[v main@upperBallSensorThresholdValue upperBallSensorThresholdValue `i  1 a 2 61 ]
-"162
-[v main@averagePtr averagePtr `uc  1 a 1 64 ]
+[v main@lowerToUpper lowerToUpper `i  1 a 2 75 ]
 "160
-[v main@state state `E2410  1 a 1 63 ]
-"237
+[v main@steadyToLower steadyToLower `i  1 a 2 73 ]
+"164
+[v main@value value `i  1 a 2 71 ]
+"165
+[v main@toggleCount toggleCount `i  1 a 2 67 ]
+"159
+[v main@upperBallSensorThresholdValue upperBallSensorThresholdValue `i  1 a 2 65 ]
+"164
+[v main@timeout timeout `i  1 a 2 63 ]
+[v main@sample sample `i  1 a 2 61 ]
+"166
+[v main@averagePtr averagePtr `uc  1 a 1 70 ]
+"162
+[v main@state state `E2412  1 a 1 69 ]
+"266
 } 0
-"7 Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c
+"7 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c
 [v _initInterrupt initInterrupt `(v  1 e 0 0 ]
 {
 "17
 } 0
-"46 Z:\Documents\GitHub\hp-switches\BallSensor\main.c
+"46 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c
 [v _init init `(v  1 e 0 0 ]
 {
 "63
@@ -390,7 +399,7 @@ onState 1
 [v abs@a a `i  1 p 2 3 ]
 "9
 } 0
-"34 Z:\Documents\GitHub\hp-switches\BallSensor\main.c
+"34 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\main.c
 [v __delay_ms _delay_ms `(v  1 e 0 0 ]
 {
 "41
@@ -414,7 +423,7 @@ onState 1
 [v ___aldiv@dividend dividend `l  1 p 4 4 ]
 "42
 } 0
-"22 Z:\Documents\GitHub\hp-switches\BallSensor\interrupt.c
+"22 C:\Users\Ivanof\Documents\GitHub\hp-switches\BallSensor\interrupt.c
 [v _isr isr `II(v  1 s 0 isr ]
 {
 "34

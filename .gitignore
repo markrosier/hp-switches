@@ -8,6 +8,13 @@
 *.lst
 *.sdb
 *.sym
+*.cmf
+*.hxl
+*.lst
+*.sdb
+*.rlf
+*.sdb
+*.sym
 
 # Libraries
 *.lib
@@ -15,8 +22,6 @@
 
 # Executables
 *.elf
-*.hex
-*.rlf
 
 # MPLABX files
 *.mk
@@ -27,12 +32,4 @@
 # Build directory
 build/
 *.obj
-BallSensor/funclist
-*.cmf
-*.hxl
-*.lst
-*.rlf
-*.sdb
-*.sym
-BallSensor/funclist
-*.obj
+funclist

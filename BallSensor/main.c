@@ -16,8 +16,8 @@
 #pragma config (FOSC=INTOSC)  	// Internal Oscillator
 #pragma config (WDTE=ON)	  	// Watchdog Timer Enabled
 #pragma config (PWRTE=ON)		// Power up timer enabled
-#pragma config (MCLRE=ON)		// MCLR pin is digital input
-#pragma config (CP=OFF)			// Code Protection
+#pragma config (MCLRE=OFF)		// MCLR pin is digital input
+#pragma config (CP=ON)			// Code Protection
 #pragma config (CPD=ON)		// Data Memory Code Protection
 #pragma config (BOREN=ON)		// Brown out reset enabled
 #pragma config (CLKOUTEN=OFF)	// CLK OUT function disabled 
@@ -157,8 +157,12 @@ int calibrate( void )
 void main(void)
 {
   int steadyStateValue, lowerBallSensorThresholdValue, upperBallSensorThresholdValue;
+  int steadyToLower=STEADY_TO_LOWER;
+  int lowerToUpper=LOWER_TO_UPPER;
   enum {offState, onState} state = offState;
-  int value, i=0;
+  int i;
+  int value, sample, timeout;
+  int toggleCount=0;
   unsigned char averagePtr=0;
   int averageTable[16];
 
@@ -182,8 +186,8 @@ void main(void)
   for(i=0; i<16; i++){
     averageTable[i]=steadyStateValue;
   }
-	lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
-  upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
+	lowerBallSensorThresholdValue = steadyStateValue + steadyToLower;
+  upperBallSensorThresholdValue = lowerBallSensorThresholdValue + lowerToUpper;
   initInterrupt();
 
   while (true)
@@ -195,9 +199,16 @@ void main(void)
 			case offState:
                 // Pick one sample every 5000
                 // Only perform live calibration in the Idle (off) state
-                if(++i>=5000){
+                if(++sample>=5000){
                     LED = LED_ON;
-                    i=0;
+                    sample=0;
+                    // detects unstability by counting activations between live-calibration
+                    if(toggleCount>10){
+                        // if switch detected as unstable, reduce the sensitivity
+                        steadyToLower = steadyToLower - 5;
+                        lowerToUpper = lowerToUpper + 5;
+                    }
+                    toggleCount=0;
                     // Keep 16 samples in memory
                     averageTable[averagePtr++]=value;
                     if(averagePtr>=16){
@@ -210,18 +221,18 @@ void main(void)
                         cumulativeVal+=averageTable[i];
                     }
                     steadyStateValue=cumulativeVal/16;
-                    lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
-                    upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
+                    lowerBallSensorThresholdValue = steadyStateValue + steadyToLower;
+                    upperBallSensorThresholdValue = lowerBallSensorThresholdValue + lowerToUpper;
                     LED = LED_OFF;
                 }
                 
 				if ( value < lowerBallSensorThresholdValue )
 				{
-                    // Clear i when a ball is detected
-                    // i is used as a timeout
-                    i=0;
-                    LED = LED_ON;
                     SENSOR_SWITCH_OUT_PIN = 0;
+                    // Reset the timeout when a ball is detected
+                    timeout=0;
+                    toggleCount++;
+                    LED = LED_ON;
                     _delay_ms(10);
                     state = onState;
 				}
@@ -238,14 +249,14 @@ void main(void)
                 // Ball Detection timeout (prevents switch inter-lock in on state))
                 // If the switch detects for more than 30s, re-do calibration
                 // Theory dictates it should be 10ms * 3000 = 30sec, although 6000 gives about 25s...
-                if(++i>=6000){
-                    i=0;
+                if(++timeout>=6000){
+                    timeout=0;
                     steadyStateValue = value;
                     for(i=0; i<16; i++){
                       averageTable[i]=steadyStateValue;
                     }
-                      lowerBallSensorThresholdValue = steadyStateValue - STEADY_TO_LOWER;
-                    upperBallSensorThresholdValue = lowerBallSensorThresholdValue + LOWER_TO_UPPER;
+                      lowerBallSensorThresholdValue = steadyStateValue + steadyToLower;
+                    upperBallSensorThresholdValue = lowerBallSensorThresholdValue + lowerToUpper;
                 }
                 
 			break;
