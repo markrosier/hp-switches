@@ -33,3 +33,10 @@
 build/
 *.obj
 funclist
+BallSensor/l.obj
+BallSensor/dist/default/production/BallSensor.production.lst
+*.cmf
+BallSensor/dist/default/production/BallSensor.production.rlf
+*.sym
+BallSensor/dist/default/production/BallSensor.production.cmf
+*.lst
