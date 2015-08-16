@@ -48,7 +48,7 @@ typedef unsigned char bool;
 #define LOW_STEADY_STATE_LEVEL        300  // steps
 #define STEADY_STATE_LEVEL_VARIATION	10  //steps
 //#define HYSTERYSIS_PERCENT						8 // percent
-#define STEADY_TO_LOWER                 -60
+#define STEADY_TO_LOWER                 -90
 #define LOWER_TO_UPPER                  30
 
 // pin 4
